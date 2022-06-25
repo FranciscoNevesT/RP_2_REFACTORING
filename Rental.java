@@ -3,19 +3,10 @@ public class Rental {
    private Movie _movie;
    private int _daysRented;
 
-   public int getFrequentRenterPoints() { 
-      //Adicionar o trecho de código extraído.
-
-      int frequentRenterPoints = 0;
-
-      // add frequent renter points
-      frequentRenterPoints ++;
-      // add bonus for a two day new release rental
-      if ((this.getMovie().getPriceCode() == Movie.NEW_RELEASE) &&
-         this.getDaysRented() > 1) frequentRenterPoints ++;
-
-      return frequentRenterPoints;
+   public int getFrequentRenterPoints(){
+      return _movie.getFrequentRenterPoints(_daysRented);
    }
+
 
    public Rental(Movie movie, int daysRented) {
       _movie = movie;
